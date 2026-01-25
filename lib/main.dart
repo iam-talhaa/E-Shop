@@ -17,6 +17,8 @@ class E_shop extends StatefulWidget {
 class _E_shopState extends State<E_shop> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home:Splashscreen() ,);
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:Splashscreen() ,);
   }
 }
