@@ -1,11 +1,10 @@
+import 'package:e_shop/view/AuthScreen/loginScreen.dart';
 import 'package:e_shop/view/splashScreen.dart';
 import 'package:flutter/material.dart';
 
-
-void main(){
+void main() {
   runApp(E_shop());
 }
-
 
 class E_shop extends StatefulWidget {
   const E_shop({super.key});
@@ -19,6 +18,7 @@ class _E_shopState extends State<E_shop> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Splashscreen() ,);
+      home: Loginscreen(),
+    );
   }
 }

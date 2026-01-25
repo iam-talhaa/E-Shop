@@ -1,4 +1,5 @@
 import 'package:e_shop/res/appColor.dart';
+import 'package:e_shop/res/components/roundedButton.dart';
 import 'package:flutter/material.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -96,22 +97,52 @@ class _SplashscreenState extends State<Splashscreen> {
                 ),
 
                 Positioned(
-                  top: screenHeight/1.3,
-                  left: screenWidth/2.6,
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 2.31,
                   child: Container(
                     height: 12,
                     width: 12,
                     decoration: BoxDecoration(
                       shape: .circle,
                       color: Appcolors.light,
-                     border: Border.all(color: Appcolors.light)
+                      border: Border.all(color: Appcolors.light),
                     ),
                   ),
                 ),
-                Container(
-                  height: screenHeight / 12,
-                  width: screenWidth / 3,
-                  decoration: BoxDecoration(color: Appcolors.light),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 1.85,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.Blackgrey,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 2.07,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.Blackgrey,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.2,
+                  left: screenWidth / 3.8,
+                  child: RooundedButon(
+                    b_text: 'Shopping Now',
+                    ontap: () {},
+                    B_color: Appcolors.Blackgrey,
+                  ),
                 ),
               ],
             ),
@@ -137,7 +168,7 @@ class _SplashscreenState extends State<Splashscreen> {
                     children: [
                       SizedBox(height: screenHeight / 10),
                       Text(
-                        'Discover something new',
+                        'Update trendy outfit',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
@@ -145,7 +176,7 @@ class _SplashscreenState extends State<Splashscreen> {
                         ),
                       ),
                       Text(
-                        'Special new arrivals just for you',
+                        'Favorite brands and hottest trends',
                         style: TextStyle(fontSize: 18, color: Colors.black),
                       ),
                     ],
@@ -194,6 +225,54 @@ class _SplashscreenState extends State<Splashscreen> {
                     ),
                   ),
                 ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 2.31,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.Blackgrey,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 1.85,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.Blackgrey,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 2.07,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.light,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.2,
+                  left: screenWidth / 3.8,
+                  child: RooundedButon(
+                    b_text: 'Shopping Now',
+                    ontap: () {},
+                    B_color: Appcolors.Blackgrey,
+                  ),
+                ),
               ],
             ),
           ),
@@ -218,7 +297,7 @@ class _SplashscreenState extends State<Splashscreen> {
                     children: [
                       SizedBox(height: screenHeight / 10),
                       Text(
-                        'Discover something new',
+                        'Explore your true style',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
@@ -226,7 +305,7 @@ class _SplashscreenState extends State<Splashscreen> {
                         ),
                       ),
                       Text(
-                        'Special new arrivals just for you',
+                        'Relax and let us bring the style to you',
                         style: TextStyle(fontSize: 18, color: Colors.black),
                       ),
                     ],
@@ -273,6 +352,54 @@ class _SplashscreenState extends State<Splashscreen> {
                         bottomLeft: .circular(10),
                       ),
                     ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 2.31,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.Blackgrey,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 1.85,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.light,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.3,
+                  left: screenWidth / 2.07,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                      shape: .circle,
+                      color: Appcolors.Blackgrey,
+                      border: Border.all(color: Appcolors.light),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: screenHeight / 1.2,
+                  left: screenWidth / 3.8,
+                  child: RooundedButon(
+                    b_text: 'Shopping Now',
+                    ontap: () {},
+                    B_color: Appcolors.Blackgrey,
                   ),
                 ),
               ],
