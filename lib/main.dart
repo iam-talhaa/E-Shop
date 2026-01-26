@@ -1,4 +1,6 @@
+import 'package:e_shop/res/components/bottomNavigationBar.dart';
 import 'package:e_shop/view/AuthScreen/loginScreen.dart';
+import 'package:e_shop/view/AuthScreen/passwords/forgetpassword.dart';
 import 'package:e_shop/view/splashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +18,11 @@ class E_shop extends StatefulWidget {
 class _E_shopState extends State<E_shop> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Loginscreen(),
+      home: MyBottomNavigationBar(pages: [
+        
+      ],),
     );
   }
 }
