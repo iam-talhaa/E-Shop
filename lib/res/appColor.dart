@@ -5,5 +5,6 @@ class Appcolors {
   static const Blackgrey = Color(0xff464447);
   static const Black = Color(0xff2D201C);
   static const Grey = Color(0xff50555C);
+  static const whiteType = Color(0xffF3F3F3);
   static const light = Color(0xffE7E8E9);
 }
