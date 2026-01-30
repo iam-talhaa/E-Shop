@@ -431,7 +431,7 @@ class _HomepageState extends State<Homepage> {
                         ? Container(
                             height: Screensize,
                             width: Screenwidth,
-                            decoration: BoxDecoration(color: Colors.red),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisAlignment: .start,
                               children: [
@@ -456,6 +456,8 @@ class _HomepageState extends State<Homepage> {
                                     ),
                                   ],
                                 ),
+                                SizedBox(height: 20),
+
                                 AnimatedContainer(
                                   duration: Duration(milliseconds: 300),
                                   height: Screensize / 4,
@@ -523,6 +525,7 @@ class _HomepageState extends State<Homepage> {
                                     ),
                                   ),
                                 ),
+                                SizedBox(height: 20),
                                 AnimatedContainer(
                                   duration: Duration(milliseconds: 300),
                                   height: Screensize / 4,
@@ -590,104 +593,73 @@ class _HomepageState extends State<Homepage> {
                                     ),
                                   ),
                                 ),
-                                // Row(
-                                //   children: [
-                                //     AnimatedContainer(
-                                //       duration: Duration(milliseconds: 300),
-                                //       height: Screensize / 4,
-                                //       width: Screenwidth / 2,
-                                //       decoration: BoxDecoration(
-                                //         borderRadius: .circular(15),
-                                //         color: Appcolors.whiteType,
+                                SizedBox(height: 20),
 
-                                //         //color: Colors.red,
-                                //       ),
-                                //       child: Padding(
-                                //         padding: const EdgeInsets.only(
-                                //           right: 10,
-                                //         ),
-                                //         child: Row(
-                                //           mainAxisAlignment: .start,
-                                //           children: [
-                                //             Image(
-                                //               fit: .cover,
-                                //               width: 100,
-                                //               image: AssetImage(
-                                //                 'assets/p11.png',
-                                //               ),
-                                //             ),
-                                //             Column(
-                                //               mainAxisAlignment: .spaceEvenly,
-                                //               crossAxisAlignment: .start,
-                                //               children: [
-                                //                 Text(
-                                //                   "T -Shirt",
-                                //                   style: TextStyle(
-                                //                     fontSize: 18,
-                                //                     color: Colors.black,
-                                //                     fontWeight: .bold,
-                                //                   ),
-                                //                 ),
-                                //                 Text(
-                                //                   "The\nOffice\nLife",
-                                //                   style: TextStyle(
-                                //                     fontSize: 20,
-                                //                     color: Colors.grey,
-                                //                     fontWeight: .w500,
-                                //                   ),
-                                //                 ),
-                                //               ],
-                                //             ),
-                                //           ],
-                                //         ),
-                                //       ),
-                                //     ),
-                                //     // SizedBox(width: 20),
-                                //     // AnimatedContainer(
-                                //     //   duration: Duration(milliseconds: 300),
-                                //     //   height: Screensize / 4,
-                                //     //   width: Screenwidth / 2.,
-                                //     //   decoration: BoxDecoration(
-                                //     //     borderRadius: .circular(15),
-                                //     //     color: Appcolors.Black,
+                                Container(
+                                  height: Screensize / 4,
+                                  width: Screenwidth,
+                                  decoration: BoxDecoration(),
+                                  child: ListView.builder(
+                                    itemCount: 2,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: Screensize / 4.1,
+                                          width: Screenwidth / 2,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              20,
+                                            ),
+                                            color: Appcolors.whiteType,
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Image(
+                                                fit: .cover,
+                                                width: 100,
+                                                image: AssetImage(
+                                                  index == 0
+                                                      ? 'assets/p11.png'
+                                                      : 'assets/p12.png',
+                                                ),
+                                              ),
+                                              Column(
+                                                mainAxisAlignment: .spaceEvenly,
+                                                crossAxisAlignment: .start,
+                                                children: [
+                                                  Text(
+                                                    index == 0
+                                                        ? 'T -Shirt'
+                                                        : 'Dresses',
 
-                                //     //     //color: Colors.red,
-                                //     //   ),
-                                //     //   child: Padding(
-                                //     //     padding: const EdgeInsets.only(
-                                //     //       right: 10,
-                                //     //     ),
-                                //     //     child: Row(
-                                //     //       mainAxisAlignment: .start,
-                                //     //       children: [
-                                //     //         Column(
-                                //     //           mainAxisAlignment: .spaceEvenly,
-                                //     //           crossAxisAlignment: .start,
-                                //     //           children: [
-                                //     //             Text(
-                                //     //               "Dresses",
-                                //     //               style: TextStyle(
-                                //     //                 fontSize: 18,
-                                //     //                 color: Colors.black,
-                                //     //                 fontWeight: .bold,
-                                //     //               ),
-                                //     //             ),
-                                //     //             Text(
-                                //     //               "Elegance\nDesign",
-                                //     //               style: TextStyle(
-                                //     //                 fontSize: 18,
-                                //     //                 color: Colors.grey,
-                                //     //                 fontWeight: .w500,
-                                //     //               ),
-                                //     //             ),
-                                //     //           ],
-                                //     //         ),
-                                //     //       ],
-                                //     //     ),
-                                //     //   ),
-                                //     // ),
-                                //   ],
-                                // ),
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      color: Colors.black,
+                                                      fontWeight: .bold,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    index == 0
+                                                        ? "The\nOffice\nLife"
+                                                        : 'Elegance\nDesign',
+
+                                                    style: TextStyle(
+                                                      fontSize: 20,
+                                                      color: Colors.grey,
+                                                      fontWeight: .w500,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
                               ],
                             ),
                           )
