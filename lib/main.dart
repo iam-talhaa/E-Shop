@@ -25,7 +25,7 @@ class _E_shopState extends State<E_shop> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyBottomNavigationBar(
-        pages: [Homepage(), myOrderScreen(), profileScreen(), dicoverScreen()],
+        pages: [Homepage(), dicoverScreen(), myOrderScreen(), profileScreen()],
       ),
     );
   }

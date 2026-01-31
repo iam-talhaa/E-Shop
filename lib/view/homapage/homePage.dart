@@ -10,6 +10,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   bool isExpended = false;
+  int selectedIndex = -1; // no selection initially
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class _HomepageState extends State<Homepage> {
 
     final Screensize = MediaQuery.of(context).size.height * 1;
     final Screenwidth = MediaQuery.of(context).size.width * 1;
-    int isSelected = 0;
+
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -193,33 +194,32 @@ class _HomepageState extends State<Homepage> {
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          print(index);
-                          isSelected = index;
+                          setState(() {
+                            selectedIndex = index;
+                          });
                         },
                         child: Container(
                           height: 90,
                           width: 90,
                           decoration: BoxDecoration(
-                            border: .all(color: Appcolors.Black, width: 2),
-                            shape: .circle,
+                            border: Border.all(
+                              color: selectedIndex == index
+                                  ? Appcolors.Black
+                                  : Colors.transparent,
+                              width: 2,
+                            ),
+                            shape: BoxShape.circle,
                             color: Appcolors.whiteType,
                           ),
                           child: Column(
-                            mainAxisAlignment: .center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
                                 height: 70,
                                 width: 70,
                                 decoration: BoxDecoration(
-                                  shape: .circle,
-
-                                  color: isSelected == 0
-                                      ? Appcolors.Black
-                                      : isSelected == 1
-                                      ? Appcolors.Black
-                                      : isSelected == 2
-                                      ? Appcolors.Black
-                                      : Appcolors.White,
+                                  shape: BoxShape.circle,
+                                  color: Appcolors.Black,
                                   image: DecorationImage(
                                     image: AssetImage(
                                       index == 0
