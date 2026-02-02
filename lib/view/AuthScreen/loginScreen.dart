@@ -34,10 +34,12 @@ class _LoginscreenState extends State<Loginscreen> {
             SizedBox(height: 70),
 
             CustomTextField(
+              onTap: () {},
               controller: _EmailController,
               hintText: 'Enter your Email',
             ),
             CustomTextField(
+              onTap: () {},
               controller: _PasswordController,
               hintText: 'Enter your Password',
             ),

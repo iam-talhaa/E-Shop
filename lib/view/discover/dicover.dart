@@ -52,6 +52,7 @@ class _dicoverScreenState extends State<dicoverScreen> {
                       child: CustomTextField(
                         controller: _SearchController,
                         hintText: "Search",
+                        onTap: () {},
                       ),
                     ),
 
@@ -96,7 +97,7 @@ class _dicoverScreenState extends State<dicoverScreen> {
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                     height: selectedindex == i
-                        ? screenHeight / 2
+                        ? screenHeight / 2.1
                         : screenHeight / 7,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -111,81 +112,83 @@ class _dicoverScreenState extends State<dicoverScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          /// 🔹 Main Row (Always Visible)
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                i == 0
-                                    ? 'Dresses'
-                                    : i == 1
-                                    ? 'Hand Bags'
-                                    : i == 2
-                                    ? 'Shoes'
-                                    : 'Out Door',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            /// 🔹 Main Row (Always Visible)
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  i == 0
+                                      ? 'Dresses'
+                                      : i == 1
+                                      ? 'Hand Bags'
+                                      : i == 2
+                                      ? 'Shoes'
+                                      : 'Out Door',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
                                 ),
-                              ),
-                              Image.asset(
-                                i == 0
-                                    ? 'assets/p10 copy.png'
-                                    : i == 1
-                                    ? 'assets/pr1.png'
-                                    : i == 2
-                                    ? 'assets/s1.png'
-                                    : 'assets/coat.png',
-                                height: 50,
+                                Image.asset(
+                                  i == 0
+                                      ? 'assets/p10 copy.png'
+                                      : i == 1
+                                      ? 'assets/pr1.png'
+                                      : i == 2
+                                      ? 'assets/s1.png'
+                                      : 'assets/coat.png',
+                                  height: selectedindex == i ? 50 : 100,
+                                ),
+                              ],
+                            ),
+
+                            /// 🔹 Extra content (Only when selected)
+                            if (selectedindex == i) ...[
+                              const Divider(),
+
+                              ListView.builder(
+                                itemCount: 6,
+                                shrinkWrap: true, // ⭐ REQUIRED
+                                physics:
+                                    const NeverScrollableScrollPhysics(), // ⭐ REQUIRED
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    onTap: () {
+                                      setState(() {
+                                        Selectedtile = index;
+                                      });
+                                    },
+                                    selected: Selectedtile == index
+                                        ? true
+                                        : false,
+                                    title: Text(
+                                      i == 0
+                                          ? Applist.dressSubCategories[index]
+                                          : i == 1
+                                          ? Applist.handBagSubCategories[index]
+                                          : i == 2
+                                          ? Applist.shoesSubCategories[index]
+                                          : Applist
+                                                .jacketCoatSubCategories[index],
+                                      style: TextStyle(
+                                        color: Selectedtile == index
+                                            ? Colors.white
+                                            : Colors.black,
+                                      ),
+                                    ),
+                                    trailing: Icon(
+                                      Icons.arrow_forward_ios_outlined,
+                                    ),
+                                  );
+                                },
                               ),
                             ],
-                          ),
-
-                          /// 🔹 Extra content (Only when selected)
-                          if (selectedindex == i) ...[
-                            const Divider(),
-
-                            ListView.builder(
-                              itemCount: 6,
-                              shrinkWrap: true, // ⭐ REQUIRED
-                              physics:
-                                  const NeverScrollableScrollPhysics(), // ⭐ REQUIRED
-                              itemBuilder: (context, index) {
-                                return ListTile(
-                                  onTap: () {
-                                    setState(() {
-                                      Selectedtile = index;
-                                    });
-                                  },
-                                  selected: Selectedtile == index
-                                      ? true
-                                      : false,
-                                  title: Text(
-                                    i == 0
-                                        ? Applist.dressSubCategories[index]
-                                        : i == 1
-                                        ? Applist.handBagSubCategories[index]
-                                        : i == 2
-                                        ? Applist.shoesSubCategories[index]
-                                        : Applist
-                                              .jacketCoatSubCategories[index],
-                                    style: TextStyle(
-                                      color: Selectedtile == index
-                                          ? Colors.white
-                                          : Colors.black,
-                                    ),
-                                  ),
-                                  trailing: Icon(
-                                    Icons.arrow_forward_ios_outlined,
-                                  ),
-                                );
-                              },
-                            ),
                           ],
-                        ],
+                        ),
                       ),
                     ),
                   ),

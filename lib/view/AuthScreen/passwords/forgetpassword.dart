@@ -37,6 +37,7 @@ class _SendEmailScreenState extends State<SendEmailScreen> {
             ),
             SizedBox(height: 50),
             CustomTextField(
+              onTap: () {},
               controller: _EmailController,
               hintText: "Enter Your Email",
             ),

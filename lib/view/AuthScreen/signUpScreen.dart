@@ -35,18 +35,22 @@ class _SignupscreenState extends State<Signupscreen> {
 
             SizedBox(height: 10),
             CustomTextField(
+              onTap: () {},
               controller: _NameController,
               hintText: 'Enter your Name',
             ),
             CustomTextField(
+              onTap: () {},
               controller: _EmailController,
               hintText: 'Enter your Email',
             ),
             CustomTextField(
+              onTap: () {},
               controller: _PasswordController,
               hintText: 'Enter your Password',
             ),
             CustomTextField(
+              onTap: () {},
               controller: _confirmController,
               hintText: 'Enter your ConfirmPassword',
             ),

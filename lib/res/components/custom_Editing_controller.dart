@@ -4,12 +4,13 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
-
-  const CustomTextField({
+  VoidCallback onTap;
+  CustomTextField({
     super.key,
     required this.controller,
     required this.hintText,
     this.obscureText = false,
+    required this.onTap,
   });
 
   @override
@@ -17,6 +18,7 @@ class CustomTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        onTap: onTap,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(

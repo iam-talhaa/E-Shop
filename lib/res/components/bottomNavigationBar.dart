@@ -1,3 +1,4 @@
+import 'package:e_shop/res/appColor.dart';
 import 'package:flutter/material.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
@@ -18,7 +19,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
       body: widget.pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentPageIndex,
-        indicatorColor: Colors.amber,
+        indicatorColor: Appcolors.DarkGreen,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -27,22 +28,22 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         destinations: const <NavigationDestination>[
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
+            selectedIcon: Icon(Icons.home, color: Colors.white),
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.notifications_outlined),
-            selectedIcon: Icon(Icons.notifications),
-            label: 'Notifications',
+            icon: Icon(Icons.search),
+            selectedIcon: Icon(Icons.search, color: Colors.white),
+            label: 'Search',
           ),
           NavigationDestination(
-            icon: Icon(Icons.message_outlined),
-            selectedIcon: Icon(Icons.message),
-            label: 'Messages',
+            icon: Icon(Icons.shopping_bag),
+            selectedIcon: Icon(Icons.shopping_bag, color: Colors.white),
+            label: 'My Order',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outlined),
-            selectedIcon: Icon(Icons.person),
+            selectedIcon: Icon(Icons.person, color: Colors.white),
             label: 'Profile',
           ),
         ],
