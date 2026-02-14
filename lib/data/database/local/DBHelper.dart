@@ -102,4 +102,11 @@ class Dbhelper {
     });
     return rowEffected;
   }
+
+  //4 STEP
+  Future<List<Map<String, dynamic>>> showAllNotes() async {
+    var db = await getdatabase();
+
+    return await db.query(COLUMN_NAME);
+  }
 }
